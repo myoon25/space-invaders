@@ -142,8 +142,13 @@ class Invaders(GameApp):
         Parameter dt: The time in seconds since last update
         Precondition: dt is a number (int or float)
         """
-        # IMPLEMENT ME
-        pass
+        if self.input.is_key_down('s'):
+            self._state = STATE_NEWWAVE
+            self._text = None
+        if self._state = STATE_NEWWAVE:
+            self._wave = Wave()
+            self._state = STATE_ACTIVE
+
 
     def draw(self):
         """
@@ -159,7 +164,8 @@ class Invaders(GameApp):
         class Wave.  We suggest the latter.  See the example subcontroller.py
         from class.
         """
-        self._text.draw(self.view)
+        if self._text != None:
+            self._text.draw(self.view)
 
 
     # HELPER METHODS FOR THE STATES GO HERE
